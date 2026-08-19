@@ -8,23 +8,25 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.view.accessibility.AccessibilityManager
+import com.github.nestorm001.autoclicker.databinding.ActivityMainBinding
 import com.github.nestorm001.autoclicker.service.FloatingClickService
 import com.github.nestorm001.autoclicker.service.autoClickService
-import kotlinx.android.synthetic.main.activity_main.*
 
 
 private const val PERMISSION_CODE = 110
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
     private var serviceIntent: Intent? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        button.setOnClickListener {
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        binding.button.setOnClickListener {
             if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N
                     || Settings.canDrawOverlays(this)) {
                 serviceIntent = Intent(this@MainActivity,

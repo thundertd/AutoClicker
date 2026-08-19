@@ -2,8 +2,8 @@ package com.github.nestorm001.autoclicker
 
 import android.content.Context
 import android.os.Looper
-import android.support.annotation.IntDef
-import android.support.annotation.StringRes
+import androidx.annotation.IntDef
+import androidx.annotation.StringRes
 import android.widget.Toast
 
 /**

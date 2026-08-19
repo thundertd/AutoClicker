@@ -91,7 +91,7 @@ class FloatingClickService : Service() {
         manager.removeView(view)
     }
 
-    override fun onConfigurationChanged(newConfig: Configuration?) {
+    override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
         "FloatingClickService onConfigurationChanged".logd()
         val x = params.x
