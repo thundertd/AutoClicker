@@ -26,18 +26,26 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.button.setOnClickListener {
-            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N
-                    || Settings.canDrawOverlays(this)) {
-                serviceIntent = Intent(this@MainActivity,
-                        FloatingClickService::class.java)
-                startService(serviceIntent)
-                onBackPressed()
-            } else {
-                askPermission()
-                shortToast("You need System Alert Window Permission to do this")
-            }
-        }
+        
+        // // Button start - mở FloatingClickService
+        // binding.button.setOnClickListener {
+        //     if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N
+        //             || Settings.canDrawOverlays(this)) {
+        //         serviceIntent = Intent(this@MainActivity,
+        //                 FloatingClickService::class.java)
+        //         startService(serviceIntent)
+        //         onBackPressed()
+        //     } else {
+        //         askPermission()
+        //         shortToast("You need System Alert Window Permission to do this")
+        //     }
+        // }
+        
+        // // Button mở danh sách kịch bản
+        // binding.btnActionList.setOnClickListener {
+        //     val intent = Intent(this@MainActivity, ActionListActivity::class.java)
+        //     startActivity(intent)
+        // }
     }
 
     private fun checkAccess(): Boolean {

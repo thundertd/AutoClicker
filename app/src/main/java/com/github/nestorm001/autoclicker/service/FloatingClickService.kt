@@ -47,7 +47,7 @@ class FloatingClickService : Service() {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                     WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY
                 } else {
-                    WindowManager.LayoutParams.TYPE_PHONE
+                    WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY
                 }
         params = WindowManager.LayoutParams(
                 WindowManager.LayoutParams.WRAP_CONTENT,

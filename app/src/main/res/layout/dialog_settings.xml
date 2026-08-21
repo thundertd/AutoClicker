@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cài đặt kịch bản"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Số lần lặp lại -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Số lần lặp lại:"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp" />
+
+    <EditText
+        android:id="@+id/etRepeatCount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập số lần (0 = vô hạn)"
+        android:inputType="number"
+        android:text="1" />
+
+    <!-- Delay giữa các action (ms) -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Độ trễ giữa các hành động (ms):"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp" />
+
+    <EditText
+        android:id="@+id/etDelayBetweenActions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập thời gian delay"
+        android:inputType="number"
+        android:text="200" />
+
+    <!-- Delay giữa các lần lặp (ms) -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Độ trễ giữa các lần lặp (ms):"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp" />
+
+    <EditText
+        android:id="@+id/etDelayBetweenRepeats"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập thời gian delay"
+        android:inputType="number"
+        android:text="1000" />
+
+    <!-- Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="24dp"
+        android:gravity="end">
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hủy"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/btnOk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OK" />
+    </LinearLayout>
+
+</LinearLayout>

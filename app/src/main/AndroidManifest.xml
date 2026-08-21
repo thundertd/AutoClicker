@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".ActionListActivity"
             android:configChanges="orientation"
             android:launchMode="singleInstance"
             android:exported="true">
@@ -22,6 +22,11 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation"
+            android:exported="false"/>
 
         <service
             android:name=".service.AutoClickService"
@@ -39,6 +44,12 @@
 
         <service
             android:name=".service.FloatingClickService"
+            android:configChanges="orientation"
+            android:enabled="true"
+            android:exported="false"/>
+
+        <service
+            android:name=".service.FloatingControlService"
             android:configChanges="orientation"
             android:enabled="true"
             android:exported="false"/>

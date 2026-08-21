@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:gravity="center_vertical">
+
+        <!-- STT -->
+        <TextView
+            android:id="@+id/tvIndex"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+        <!-- Tên kịch bản -->
+        <TextView
+            android:id="@+id/tvActionName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Kịch bản 1"
+            android:textSize="16sp"
+            android:layout_marginStart="8dp" />
+
+        <!-- Button Active -->
+        <Button
+            android:id="@+id/btnActive"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="@string/active"
+            android:textSize="11sp"
+            android:layout_marginStart="4dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp" />
+
+        <!-- Button Xem chi tiết -->
+        <Button
+            android:id="@+id/btnDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="@string/detail"
+            android:textSize="11sp"
+            android:layout_marginStart="4dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp" />
+
+        <!-- Button Xuất file -->
+        <Button
+            android:id="@+id/btnExport"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="@string/export"
+            android:textSize="11sp"
+            android:layout_marginStart="4dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp" />
+
+        <!-- Button Chạy -->
+        <Button
+            android:id="@+id/btnRun"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="@string/run"
+            android:textSize="11sp"
+            android:layout_marginStart="4dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp" />
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

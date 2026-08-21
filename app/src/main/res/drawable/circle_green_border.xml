@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Vòng tròn xanh lá có viền cho điểm kết thúc swipe -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <solid android:color="#4CAF50" />
+    <stroke
+        android:width="4dp"
+        android:color="#2E7D32" />
+    <size
+        android:width="50dp"
+        android:height="50dp" />
+</shape>

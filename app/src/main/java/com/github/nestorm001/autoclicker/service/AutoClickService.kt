@@ -49,6 +49,19 @@ class AutoClickService : AccessibilityService() {
         dispatchGesture(gestureDescription, null, null)
     }
 
+    fun swipe(x1: Int, y1: Int, x2: Int, y2: Int, duration: Long = 300) {
+        "swipe from ($x1, $y1) to ($x2, $y2)".logd()
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) return
+        val path = Path()
+        path.moveTo(x1.toFloat(), y1.toFloat())
+        path.lineTo(x2.toFloat(), y2.toFloat())
+        val builder = GestureDescription.Builder()
+        val gestureDescription = builder
+                .addStroke(GestureDescription.StrokeDescription(path, 10, duration))
+                .build()
+        dispatchGesture(gestureDescription, null, null)
+    }
+
     fun run(newEvents: MutableList<Event>) {
         events.clear()
         events.addAll(newEvents)

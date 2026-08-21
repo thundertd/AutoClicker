@@ -3,4 +3,28 @@
     <string name="accessibility_service_description">TODO</string>
     <string name="accessibility_service_name">AutoClickService</string>
     <string name="accessibility_service_id">com.github.nestorm001.autoclicker/.service.AutoClickService</string>
+    
+    <!-- Action List Activity -->
+    <string name="action_list_title">Danh sách kịch bản</string>
+    <string name="edit_actions">Điều chỉnh</string>
+    <string name="export_selected">Xuất JSON</string>
+    <string name="run_sequence">Chạy loạt</string>
+    <string name="active">Active</string>
+    <string name="inactive">Inactive</string>
+    <string name="detail">Chi tiết</string>
+    <string name="export">Xuất</string>
+    <string name="run">Chạy</string>
+    <string name="coming_soon">Chờ phát triển</string>
+    <string name="action_list">Danh sách</string>
+    
+    <!-- Floating Control Panel -->
+    <string name="play">Chạy</string>
+    <string name="pause">Tạm dừng</string>
+    <string name="add_point">Thêm điểm</string>
+    <string name="add_swipe">Thêm vuốt</string>
+    <string name="remove">Xóa</string>
+    <string name="settings">Cài đặt</string>
+    <string name="save">Lưu</string>
+    <string name="move_hide">Di chuyển</string>
+    <string name="need_permission">Bạn cần cấp quyền System Alert Window</string>
 </resources>

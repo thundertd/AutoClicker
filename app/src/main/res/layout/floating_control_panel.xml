@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/control_panel_background"
+    android:padding="8dp">
+
+    <!-- Button Play/Pause -->
+    <ImageButton
+        android:id="@+id/btnPlay"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:src="@android:drawable/ic_media_play"
+        android:contentDescription="@string/play"
+        android:scaleType="fitCenter"
+        android:layout_margin="4dp" />
+
+    <!-- Button Add Target Point -->
+    <ImageButton
+        android:id="@+id/btnAddPoint"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:src="@android:drawable/ic_input_add"
+        android:contentDescription="@string/add_point"
+        android:scaleType="fitCenter"
+        android:layout_margin="4dp" />
+
+    <!-- Button Add Swipe -->
+    <ImageButton
+        android:id="@+id/btnAddSwipe"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:src="@android:drawable/ic_menu_send"
+        android:contentDescription="@string/add_swipe"
+        android:scaleType="fitCenter"
+        android:layout_margin="4dp" />
+
+    <!-- Button Remove -->
+    <ImageButton
+        android:id="@+id/btnRemove"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:src="@android:drawable/ic_delete"
+        android:contentDescription="@string/remove"
+        android:scaleType="fitCenter"
+        android:layout_margin="4dp" />
+
+    <!-- Button Settings -->
+    <ImageButton
+        android:id="@+id/btnSettings"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:src="@android:drawable/ic_menu_preferences"
+        android:contentDescription="@string/settings"
+        android:scaleType="fitCenter"
+        android:layout_margin="4dp" />
+
+    <!-- Button Save -->
+    <ImageButton
+        android:id="@+id/btnSave"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:src="@android:drawable/ic_menu_save"
+        android:contentDescription="@string/save"
+        android:scaleType="fitCenter"
+        android:layout_margin="4dp" />
+
+    <!-- Button Move/Hide -->
+    <ImageButton
+        android:id="@+id/btnMove"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:src="@android:drawable/ic_menu_always_landscape_portrait"
+        android:contentDescription="@string/move_hide"
+        android:scaleType="fitCenter"
+        android:layout_margin="4dp" />
+
+</LinearLayout>
