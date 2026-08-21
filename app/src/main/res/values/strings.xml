@@ -26,5 +26,6 @@
     <string name="settings">Cài đặt</string>
     <string name="save">Lưu</string>
     <string name="move_hide">Di chuyển</string>
+    <string name="close">Đóng</string>
     <string name="need_permission">Bạn cần cấp quyền System Alert Window</string>
 </resources>

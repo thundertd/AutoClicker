@@ -76,6 +76,7 @@ class FloatingControlService : Service() {
     private lateinit var btnSettings: ImageButton
     private lateinit var btnSave: ImageButton
     private lateinit var btnMove: ImageButton
+    private lateinit var btnClose: ImageButton
     
     override fun onBind(intent: Intent?): IBinder? = null
     
@@ -145,6 +146,7 @@ class FloatingControlService : Service() {
         btnSettings = controlPanelView.findViewById(R.id.btnSettings)
         btnSave = controlPanelView.findViewById(R.id.btnSave)
         btnMove = controlPanelView.findViewById(R.id.btnMove)
+        btnClose = controlPanelView.findViewById(R.id.btnClose)
         
         // Setup click listeners
         btnPlay.setOnClickListener { onPlayClicked() }
@@ -153,6 +155,8 @@ class FloatingControlService : Service() {
         btnRemove.setOnClickListener { onRemoveClicked() }
         btnSettings.setOnClickListener { onSettingsClicked() }
         btnSave.setOnClickListener { onSaveClicked() }
+        btnClose.setOnClickListener { onCloseService() }
+        
         // Long press nút Move để đóng service, kéo nút Move để di chuyển control panel
         btnMove.setOnLongClickListener {
             onCloseService()
@@ -180,12 +184,32 @@ class FloatingControlService : Service() {
         if (isPlaying) {
             btnPlay.setImageResource(android.R.drawable.ic_media_pause)
             shortToast(getString(R.string.play))
-            // TODO: Chạy script
+            
+            // Ẩn tất cả các button khác, chỉ giữ lại Play và Move
+            btnAddPoint.visibility = View.GONE
+            btnAddSwipe.visibility = View.GONE
+            btnRemove.visibility = View.GONE
+            btnSettings.visibility = View.GONE
+            btnSave.visibility = View.GONE
+            
+            // Làm mờ tất cả target views
+            setTargetsActive(false)
+            
+            // Chạy script
             runScript()
         } else {
             btnPlay.setImageResource(android.R.drawable.ic_media_play)
             shortToast(getString(R.string.pause))
-            // TODO: Dừng script
+            
+            // Hiện lại tất cả các button
+            btnAddPoint.visibility = View.VISIBLE
+            btnAddSwipe.visibility = View.VISIBLE
+            btnRemove.visibility = View.VISIBLE
+            btnSettings.visibility = View.VISIBLE
+            btnSave.visibility = View.VISIBLE
+            
+            // Khôi phục hiển thị bình thường cho targets
+            setTargetsActive(true)
         }
     }
     
@@ -300,10 +324,13 @@ class FloatingControlService : Service() {
         btnSettings.visibility = if (isControlPanelVisible) View.VISIBLE else View.GONE
         btnSave.visibility = if (isControlPanelVisible) View.VISIBLE else View.GONE
         
+        // Hiện button Close khi ẩn menu, ẩn button Close khi hiện menu
+        btnClose.visibility = if (isControlPanelVisible) View.GONE else View.VISIBLE
+        
         val message = if (isControlPanelVisible) {
             "Đã hiện menu"
         } else {
-            "Đã ẩn menu (Giữ lâu để đóng)"
+            "Đã ẩn menu (Nhấn X để đóng)"
         }
         shortToast(message)
     }
@@ -311,6 +338,17 @@ class FloatingControlService : Service() {
     private fun onCloseService() {
         shortToast("Đang đóng floating control...")
         stopSelf()
+    }
+    
+    /**
+     * Làm mờ/sáng tất cả target views
+     * @param active true = hiển thị bình thường, false = làm mờ (khi đang chạy)
+     */
+    private fun setTargetsActive(active: Boolean) {
+        val alpha = if (active) 1.0f else 0.5f
+        targetViews.values.forEach { view ->
+            view.alpha = alpha
+        }
     }
     
     private fun addTargetView(target: Target) {

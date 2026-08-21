@@ -1,6 +1,6 @@
 # Bấm vào button chạy hành động:
 - Hiển thị lớp giao diện phủ (Floating Widget / System Alert Window)
-## Lớp giao diện nổi (Floating Overlay Widget)##
+## Lớp giao diện nổi (Floating Overlay Widget)
 - Cung cấp cho người dùng một công cụ điều khiển linh hoạt, hiển thị xuyên suốt trên mọi ứng dụng để người dùng có thể tự do định vị các điểm thao tác (click/swipe) và kích hoạt kịch bản tự động hóa mà không bị gián đoạn trải nghiệm sử dụng app đích.
 - Cơ chế Kỹ thuật & Quyền hệ thống (System Level Requirements)##
 - Cấp quyền hiển thị: Hệ thống yêu cầu người dùng cấp quyền `SYSTEM_ALERT_WINDOW` (Hiển thị trên các ứng dụng khác) và `ACCESSIBILITY_SERVICE` (Dịch vụ hỗ trợ để gửi tọa độ chạm/vuốt đến hệ thống). Nếu đã có rồi thì thôi.
