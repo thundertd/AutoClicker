@@ -6,7 +6,6 @@ import android.content.Intent
 import android.graphics.Path
 import android.os.Build
 import android.view.accessibility.AccessibilityEvent
-import com.github.nestorm001.autoclicker.MainActivity
 import com.github.nestorm001.autoclicker.bean.Event
 import com.github.nestorm001.autoclicker.logd
 
@@ -33,8 +32,7 @@ class AutoClickService : AccessibilityService() {
         super.onServiceConnected()
         "onServiceConnected".logd()
         autoClickService = this
-        startActivity(Intent(this, MainActivity::class.java)
-                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
+        // Service is now connected, no need to launch activity
     }
 
     fun click(x: Int, y: Int) {
@@ -45,6 +43,31 @@ class AutoClickService : AccessibilityService() {
         val builder = GestureDescription.Builder()
         val gestureDescription = builder
                 .addStroke(GestureDescription.StrokeDescription(path, 10, 10))
+                .build()
+        dispatchGesture(gestureDescription, null, null)
+    }
+
+    fun clickWithDuration(x: Int, y: Int, holdDuration: Long) {
+        "click with duration $x $y hold=$holdDuration".logd()
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) return
+        val path = Path()
+        path.moveTo(x.toFloat(), y.toFloat())
+        val builder = GestureDescription.Builder()
+        val gestureDescription = builder
+                .addStroke(GestureDescription.StrokeDescription(path, 0, holdDuration))
+                .build()
+        dispatchGesture(gestureDescription, null, null)
+    }
+
+    fun swipe(fromX: Int, fromY: Int, toX: Int, toY: Int, duration: Long) {
+        "swipe from ($fromX, $fromY) to ($toX, $toY) duration=$duration".logd()
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) return
+        val path = Path()
+        path.moveTo(fromX.toFloat(), fromY.toFloat())
+        path.lineTo(toX.toFloat(), toY.toFloat())
+        val builder = GestureDescription.Builder()
+        val gestureDescription = builder
+                .addStroke(GestureDescription.StrokeDescription(path, 0, duration))
                 .build()
         dispatchGesture(gestureDescription, null, null)
     }

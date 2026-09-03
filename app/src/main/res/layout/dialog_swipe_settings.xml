@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cài đặt hành động vuốt"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Delay Before Swipe -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thời gian trễ trước khi vuốt (ms):"
+        android:textSize="14sp"/>
+
+    <EditText
+        android:id="@+id/etDelayBefore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="0"
+        android:inputType="number"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- Swipe Duration -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thời gian vuốt (ms):"
+        android:textSize="14sp"/>
+
+    <EditText
+        android:id="@+id/etSwipeDuration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="300"
+        android:inputType="number"
+        android:layout_marginBottom="12dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lưu ý: Tốc độ vuốt được tính từ khoảng cách giữa 2 điểm và thời gian vuốt."
+        android:textSize="12sp"
+        android:textColor="#666666"
+        android:layout_marginTop="8dp"/>
+
+</LinearLayout>

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.github.nestorm001.autoclicker">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -11,23 +12,34 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
-            android:name=".MainActivity"
-            android:configChanges="orientation"
-            android:launchMode="singleInstance"
-            android:exported="true">
+            android:name=".ActionListActivity"
+            android:exported="true"
+            android:label="Danh sách hành động"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        
+        <activity
+            android:name=".GuideActivity"
+            android:label="Hướng dẫn"
+            android:parentActivityName=".ActionListActivity"/>
+
+        <activity
+            android:name=".ActionDetailActivity"
+            android:label="Chi tiết hành động"
+            android:parentActivityName=".ActionListActivity"/>
 
         <service
             android:name=".service.AutoClickService"
+            android:exported="true"
             android:label="@string/accessibility_service_name"
-            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
-            android:exported="true">
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
             <intent-filter>
                 <action android:name="android.accessibilityservice.AccessibilityService"/>
             </intent-filter>
@@ -39,6 +51,18 @@
 
         <service
             android:name=".service.FloatingClickService"
+            android:configChanges="orientation"
+            android:enabled="true"
+            android:exported="false"/>
+
+        <service
+            android:name=".service.FloatingActionEditorService"
+            android:configChanges="orientation"
+            android:enabled="true"
+            android:exported="false"/>
+
+        <service
+            android:name=".service.FloatingActionRunnerService"
             android:configChanges="orientation"
             android:enabled="true"
             android:exported="false"/>

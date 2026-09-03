@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="12dp"
+    android:background="@drawable/widget_background">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvActionInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hành động: Test"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:paddingBottom="4dp"/>
+
+        <TextView
+            android:id="@+id/tvProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Điểm: 1/5"
+            android:textSize="12sp"
+            android:paddingBottom="4dp"/>
+
+        <TextView
+            android:id="@+id/tvClickCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Clicks: 0"
+            android:textSize="12sp"
+            android:paddingBottom="4dp"/>
+
+        <TextView
+            android:id="@+id/tvDelay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delay: 200ms"
+            android:textSize="12sp"
+            android:paddingBottom="8dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/btnPlay"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@android:drawable/ic_media_play"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Chạy"/>
+
+            <ImageButton
+                android:id="@+id/btnStop"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@android:drawable/ic_media_pause"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Dừng"
+                android:visibility="gone"
+                android:layout_marginStart="8dp"/>
+
+            <ImageButton
+                android:id="@+id/btnSettings"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@android:drawable/ic_menu_preferences"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Cài đặt"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

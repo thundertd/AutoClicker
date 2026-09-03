@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/buttonsContainer"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="4dp"
+    android:background="#CC000000"
+    android:gravity="center">
+
+    <!-- Play/Pause Button -->
+    <ImageButton
+        android:id="@+id/btnPlay"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:src="@android:drawable/ic_media_play"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:tint="#4CAF50"
+        android:contentDescription="Chạy"
+        android:scaleType="fitCenter"
+        android:padding="8dp"/>
+
+    <ImageButton
+        android:id="@+id/btnPause"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:src="@android:drawable/ic_media_pause"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:tint="#FFC107"
+        android:contentDescription="Tạm dừng"
+        android:scaleType="fitCenter"
+        android:padding="8dp"
+        android:visibility="gone"/>
+
+    <!-- Add Click Point Button -->
+    <ImageButton
+        android:id="@+id/btnAddClick"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:src="@android:drawable/ic_input_add"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:tint="#8BC34A"
+        android:contentDescription="Thêm điểm click"
+        android:scaleType="fitCenter"
+        android:padding="8dp"
+        android:layout_marginTop="4dp"/>
+
+    <!-- Add Swipe Action Button -->
+    <ImageButton
+        android:id="@+id/btnAddSwipe"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:src="@android:drawable/ic_menu_revert"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:tint="#FFEB3B"
+        android:contentDescription="Thêm hành động vuốt"
+        android:scaleType="fitCenter"
+        android:padding="8dp"
+        android:layout_marginTop="4dp"/>
+
+    <!-- Remove Target Button -->
+    <ImageButton
+        android:id="@+id/btnRemove"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:src="@android:drawable/ic_delete"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:tint="#FF9800"
+        android:contentDescription="Xóa mục tiêu"
+        android:scaleType="fitCenter"
+        android:padding="8dp"
+        android:layout_marginTop="4dp"/>
+
+    <!-- Settings Button -->
+    <ImageButton
+        android:id="@+id/btnSettings"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:src="@android:drawable/ic_menu_preferences"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:tint="#03A9F4"
+        android:contentDescription="Cài đặt"
+        android:scaleType="fitCenter"
+        android:padding="8dp"
+        android:layout_marginTop="4dp"/>
+
+    <!-- Hide/Show Menu Button -->
+    <ImageButton
+        android:id="@+id/btnToggleMenu"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:src="@android:drawable/ic_menu_sort_by_size"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:tint="#9E9E9E"
+        android:contentDescription="Ẩn/Hiện menu"
+        android:scaleType="fitCenter"
+        android:padding="8dp"
+        android:layout_marginTop="4dp"/>
+
+</LinearLayout>

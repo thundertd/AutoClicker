@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <!-- Start Point -->
+    <ImageView
+        android:id="@+id/imgSwipeStart"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@android:drawable/presence_away"
+        android:contentDescription="Điểm bắt đầu vuốt"/>
+
+    <TextView
+        android:id="@+id/tvSwipeStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="S"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"/>
+</RelativeLayout>
